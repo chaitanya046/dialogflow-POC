@@ -14,7 +14,7 @@ if($method == 'POST'){
 			$speech = "Hi, Nice to meet you";
 			break;
 
-		case 'what is my bill'||'what is my bill amount'||'whats my bill'||'bill amount'||'my bill':
+		case 'what is my bill'||'what is my bill amount'||'whats my bill'||'bill amount'||'my bill'||'what\'s my bill'||'whats my bill':
 			$speech = "According to records its $650";
 			break;
 
