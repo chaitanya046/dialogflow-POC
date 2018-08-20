@@ -22,7 +22,7 @@ if($method == 'POST'){
 			$speech = "Your due date is 13th November 2018 after which you will be charged $50 delay fee.";
 			break;
 			
-		case 'When is the nect billing cycle':
+		case 'When is the next billing cycle':
 			$speech = "November is the next cycle";
 			break;
 			
