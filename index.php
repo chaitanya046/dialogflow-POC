@@ -14,15 +14,15 @@ if($method == 'POST'){
 			$speech = "Hi, Nice to meet you";
 			break;
 
-		case 'what is my bill':
+		case 'what is my bill'||'what is my bill amount'||'whats my bill'||'bill amount'||'my bill':
 			$speech = "According to records its $650";
 			break;
 
-		case 'When is my due date':
+		case 'when is its due date'||'when is my due date'||'when is the due date'||'when is due date':
 			$speech = "Your due date is 13th November 2018 after which you will be charged $50 delay fee.";
 			break;
 			
-		case 'When is the next billing cycle':
+		case 'when is the next billing cycle'||'when is next billing cycle'||'next cycle for billing'||'next billing':
 			$speech = "November is the next cycle";
 			break;
 			
