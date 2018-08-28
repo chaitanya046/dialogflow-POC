@@ -8,6 +8,7 @@ if($method == 'POST'){
 	$json = json_decode($requestBody);
 
 	$text = $json->result->parameters->text;
+	$isEmail = $json->queryText;
 
 	switch ($text) {
 		case 'hi':
@@ -26,7 +27,12 @@ if($method == 'POST'){
 			$speech = "November is the next cycle";
 			break;
 			
-		case 'send me email'
+		default:
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			break;
+	}
+	
+	if($isEmail == 'send me email'){
 			# Include the Autoloader (see "Libraries" for install instructions)
 			require 'vendor/autoload.php';
 			use Mailgun\Mailgun;
@@ -41,11 +47,6 @@ if($method == 'POST'){
                 'to'      => 'Chaitanya <chaitanyauttarwar046@gmail.com>',
                 'subject' => 'Hello Chaitanya',
                 'text'    => 'Congratulations Chaitanya, you just sent an email with Mailgun!  You are truly awesome!'));
-			break;
-			
-		default:
-			$speech = "Sorry, I didnt get that. Please ask me something else.";
-			break;
 	}
 
 	$response = new \stdClass();
