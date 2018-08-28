@@ -26,6 +26,23 @@ if($method == 'POST'){
 			$speech = "November is the next cycle";
 			break;
 			
+		case 'send me email'
+			# Include the Autoloader (see "Libraries" for install instructions)
+			require 'vendor/autoload.php';
+			use Mailgun\Mailgun;
+
+			# Instantiate the client.
+			$mgClient = new Mailgun('91d4e08b9ee4deccca939ef701814ed1-c1fe131e-d5955e83');
+			$domain = "sandbox79760ffe0bd343be99c98b3bb9a6115b.mailgun.org";
+
+			# Make the call to the client.
+			$result = $mgClient->sendMessage("$domain",
+          array('from'    => 'Mailgun Sandbox <postmaster@sandbox79760ffe0bd343be99c98b3bb9a6115b.mailgun.org>',
+                'to'      => 'Chaitanya <chaitanyauttarwar046@gmail.com>',
+                'subject' => 'Hello Chaitanya',
+                'text'    => 'Congratulations Chaitanya, you just sent an email with Mailgun!  You are truly awesome!'));
+			break;
+			
 		default:
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
