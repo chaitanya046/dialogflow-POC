@@ -29,7 +29,7 @@ if($method == 'POST'){
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}		
-		if($isEmail == 'send me email'){
+		if($email_flag == 'send me email'){
 			# Include the Autoloader (see "Libraries" for install instructions)
 			require 'vendor/autoload.php';
 			use Mailgun\Mailgun;
