@@ -6,10 +6,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-
 	$text = $json->result->parameters->text;
-	$isEmail = $json->result->resolvedQuery;
-
 	switch ($text) {
 		case 'hi':
 			$speech = "Hi, Nice to meet you";
@@ -30,26 +27,7 @@ if($method == 'POST'){
 		default:
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
-	}
-	
-		if($isEmail == 'send me email' || 'email' || 'send email'){
-			echo "inside email method"
-			# Include the Autoloader (see "Libraries" for install instructions)
-			require 'vendor/autoload.php';
-			use Mailgun\Mailgun;
-	
-			# Instantiate the client.
-			$mgClient = new Mailgun('91d4e08b9ee4deccca939ef701814ed1-c1fe131e-d5955e83');
-			$domain = "sandbox79760ffe0bd343be99c98b3bb9a6115b.mailgun.org";
-			
-			# Make the call to the client.
-			$result = $mgClient->sendMessage("$domain",
-          array('from'    => 'Mailgun Sandbox <postmaster@sandbox79760ffe0bd343be99c98b3bb9a6115b.mailgun.org>',
-                'to'      => 'Chaitanya <chaitanyauttarwar046@gmail.com>',
-                'subject' => 'Hello Chaitanya',
-                'text'    => 'Congratulations Chaitanya, you just sent an email with Mailgun!  You are truly awesome!'));
-	}
-	echo "email sent - if ended"		
+	}		
 	
 	$response = new \stdClass();
 	$response->speech = $speech;
