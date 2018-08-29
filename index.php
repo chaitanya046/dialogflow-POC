@@ -12,9 +12,9 @@ if($method == 'POST'){
 			$speech = "Hi, Nice to meet you";
 			break;
 
-		case 'what is my bill'||'what is my bill amount'||'whats my bill'||'bill amount'||'my bill'||'what\'s my bill'||'whats my bill':
-			$speech = "According to records its $650";
-			break;
+		//case 'what is my bill'||'what is my bill amount'||'whats my bill'||'bill amount'||'my bill'||'what\'s my bill'||'whats my bill':
+			//$speech = "According to records its $650";
+			//break;
 
 		case 'when is its due date'||'when is my due date'||'when is the due date'||'when is due date':
 			$speech = "Your due date is 13th November 2018 after which you will be charged $50 delay fee.";
