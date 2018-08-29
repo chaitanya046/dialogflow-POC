@@ -16,7 +16,7 @@ if($method == 'POST'){
 			$speech = "According to records its $650";
 			break;
 
-		case "when is its due date":
+		case "when is its due date"||"when is my due date":
 			$speech = "Your due date is 13th November 2018 after which you will be charged $50 delay fee.";
 			break;
 			
