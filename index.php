@@ -25,6 +25,10 @@ if($method == 'POST'){
 			$speech = "November is the next cycle";
 			break;
 			
+		case "send me email"||"send email":
+		$speech = "email will be sent";
+		break;
+			
 		default:
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
